@@ -14,7 +14,7 @@ export default siteConfig({
   author: 'Harsh Sharma',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'An Alumni Portal Demo by Harsh Sharma',
 
   // social usernames (optional)
   twitter: 'transitive_bs',
