@@ -2,24 +2,24 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '3958fcf52ddd4a7e81a4cca5d5c3932b',
+  rootNotionPageId: 'b6d328e68ba14c118f29bf422f2c82ef',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'DPSRU Alumni Portal',
+  name: 'Harshs Porfolio',
   domain: 'dpsru.vercel.app',
   author: 'Harsh Sharma',
 
   // open graph metadata (optional)
-  description: 'An Alumni Portal Demo by Harsh Sharma',
+  description: 'A Project Portfolio by Harsh Sharma,
 
   // social usernames (optional)
-  twitter: 'transitive_bs',
-  github: 'transitive-bullshit',
-  linkedin: 'fisch2',
+  twitter: 'harshxharsh',
+  github: 'harshfolio',
+  linkedin: 'harshxharsh',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
