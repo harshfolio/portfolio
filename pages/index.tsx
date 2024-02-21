@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as analytics from 'vercel/analytics';
 
 import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
