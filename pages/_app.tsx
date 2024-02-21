@@ -1,5 +1,6 @@
 // global styles shared across the entire site
 import * as React from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
@@ -30,6 +31,24 @@ import {
 
 if (!isServer) {
   bootstrap()
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }
 
 export default function App({ Component, pageProps }: AppProps) {
