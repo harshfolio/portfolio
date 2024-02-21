@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Harshs Porfolio',
-  domain: 'dpsru.vercel.app',
+  domain: 'harshfolio.vercel.app',
   author: 'Harsh Sharma',
 
   // open graph metadata (optional)
