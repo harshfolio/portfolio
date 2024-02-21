@@ -9,8 +9,8 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: "Harsh's Portfolio",
-  domain: 'harshsharma.vercel.app,
+  name: 'Harshs Portfolio',
+  domain: 'harshsharma.vercel.app',
   author: 'Harsh Sharma',
 
   // open graph metadata (optional)
