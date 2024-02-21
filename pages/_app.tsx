@@ -33,25 +33,10 @@ if (!isServer) {
   bootstrap()
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <head>
-        <title>Next.js</title>
-      </head>
-      <body>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
-}
-
-export default function App({ Component, pageProps }: AppProps) {
+export default function AppRootLayout({
+  Component,
+  pageProps,
+}: AppProps) {
   const router = useRouter()
 
   React.useEffect(() => {
@@ -80,5 +65,15 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        <Component {...pageProps} />
+        <Analytics />
+      </body>
+    </html>
+  )
 }
