@@ -27,6 +27,7 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+import { Analytics } from '@vercel/analytics/react';
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -141,6 +142,20 @@ const propertyTextValue = (
   }
 
   return defaultFn()
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }
 
 export const NotionPage: React.FC<types.PageProps> = ({
