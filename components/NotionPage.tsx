@@ -26,8 +26,9 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
-import { Analytics } from '@vercel/analytics/react';
 import styles from './styles.module.css'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
