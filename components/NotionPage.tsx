@@ -27,7 +27,6 @@ import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
