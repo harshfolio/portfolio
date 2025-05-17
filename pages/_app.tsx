@@ -33,10 +33,7 @@ if (!isServer) {
   bootstrap()
 }
 
-export default function AppRootLayout({
-  Component,
-  pageProps,
-}: AppProps) {
+export default function AppRootLayout({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   React.useEffect(() => {
@@ -66,7 +63,7 @@ export default function AppRootLayout({
   }, [router.events])
 
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
         <title>Next.js</title>
       </head>
