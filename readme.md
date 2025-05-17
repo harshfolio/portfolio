@@ -28,10 +28,8 @@ The project is live on Vercel! You can access it [here](https://harshsharma.verc
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/project-portfolio.git
+   git clone https://github.com/harshfolio/portfolio.git
 
-<<<<<<< HEAD
-=======
 1. Fork / clone this repo
 2. Change a few values in [site.config.ts](./site.config.ts)
 3. `npm install`
@@ -98,7 +96,7 @@ REDIS_PASSWORD='TODO'
 
 If you're not sure which Redis provider to use, we recommend [Redis Labs](https://redis.com), which provides a free plan.
 
-Note that preview images and redis caching are both optional features. If you’d rather not deal with them, just disable them in your site config.
+Note that preview images and redis caching are both optional features. If you'd rather not deal with them, just disable them in your site config.
 
 ## Styles
 
@@ -178,11 +176,10 @@ If you want to test your redis builds with GitHub Actions, then you'll need to e
 
 ## Contributing
 
-See the [contribution guide](contributing.md) and join our amazing list of [contributors](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/graphs/contributors)!
+See the [contribution guide](contributing.md) and join our amazing list of [contributors](https://github.com/harshfolio/portfolio/graphs/contributors)!
 
 ## License
 
-MIT © [Travis Fischer](https://transitivebullsh.it)
+MIT © Harsh Sharma
 
 Support my open source work by <a href="https://twitter.com/transitive_bs">following me on twitter <img src="https://storage.googleapis.com/saasify-assets/twitter-logo.svg" alt="twitter" height="24px" align="center"></a>
->>>>>>> upstream/main

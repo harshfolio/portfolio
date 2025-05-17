@@ -4,6 +4,7 @@ import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import cs from 'classnames'
 import * as React from 'react'
 import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
+import { motion } from 'framer-motion'
 
 import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
@@ -44,7 +45,7 @@ export function NotionPageHeader({
   }
 
   return (
-    <header className='notion-header'>
+    <motion.div initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }} className='notion-header'>
       <div className='notion-nav-header'>
         <Breadcrumbs block={block} rootOnly={true} />
 
@@ -84,6 +85,6 @@ export function NotionPageHeader({
           {isSearchEnabled && <Search block={block} title={null} />}
         </div>
       </div>
-    </header>
+    </motion.div>
   )
 }

@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
-  "author": "Travis Fischer <travis@transitivebullsh.it>",
-  "repository": "transitive-bullshit/nextjs-notion-starter-kit",
+  "author": "Harsh Sharma <your-email@example.com>",
+  "repository": "harshfolio/portfolio",
   "license": "MIT",
   "engines": {
     "node": ">=18"
@@ -37,6 +37,7 @@
     "classnames": "^2.5.1",
     "expiry-map": "^2.0.0",
     "fathom-client": "^3.4.1",
+    "framer-motion": "^12.12.1",
     "ky": "^1.7.2",
     "lqip-modern": "^2.2.1",
     "next": "^15.0.3",

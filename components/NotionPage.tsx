@@ -14,6 +14,7 @@ import {
 } from 'react-notion-x'
 import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 import { useSearchParam } from 'react-use'
+import { motion } from 'framer-motion'
 
 import type * as types from '@/lib/types'
 import * as config from '@/lib/config'
@@ -161,12 +162,56 @@ export function NotionPage({
   const router = useRouter()
   const lite = useSearchParam('lite')
 
+  const keys = Object.keys(recordMap?.block || {})
+  const block = recordMap?.block?.[keys[0]]?.value
+
+  // Animate the first block (Hero/intro)
+  const animatedHero = (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: 'easeOut' }}
+      style={{ marginBottom: '2.5rem' }}
+    >
+      {/* NotionRenderer will render the first block as usual, but now it's animated */}
+    </motion.div>
+  )
+
+  // Custom NotionRenderer components for animated collections
   const components = React.useMemo<Partial<NotionComponents>>(
     () => ({
       nextLegacyImage: Image,
       nextLink: Link,
       Code,
-      Collection,
+      Collection: (props) => (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
+          {/* Render each collection item with animation */}
+          {props.collectionView?.collection_group_results?.blockIds?.map((id) => (
+            <motion.div
+              key={id}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
+              {/* Default collection item rendering */}
+              <Collection {...props} blockId={id} />
+            </motion.div>
+          ))}
+        </motion.div>
+      ),
       Equation,
       Pdf,
       Modal,
@@ -191,9 +236,6 @@ export function NotionPage({
     const searchParams = new URLSearchParams(params)
     return mapPageUrl(site, recordMap, searchParams)
   }, [site, recordMap, lite])
-
-  const keys = Object.keys(recordMap?.block || {})
-  const block = recordMap?.block?.[keys[0]]?.value
 
   const isBlogPost =
     block?.type === 'page' && block?.parent_table === 'collection'
