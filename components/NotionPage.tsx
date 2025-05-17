@@ -1,4 +1,5 @@
 import cs from 'classnames'
+import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
@@ -14,7 +15,6 @@ import {
 } from 'react-notion-x'
 import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 import { useSearchParam } from 'react-use'
-import { motion } from 'framer-motion'
 
 import type * as types from '@/lib/types'
 import * as config from '@/lib/config'
