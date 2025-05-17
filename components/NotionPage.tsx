@@ -165,18 +165,6 @@ export function NotionPage({
   const keys = Object.keys(recordMap?.block || {})
   const block = recordMap?.block?.[keys[0]]?.value
 
-  // Animate the first block (Hero/intro)
-  const animatedHero = (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: 'easeOut' }}
-      style={{ marginBottom: '2.5rem' }}
-    >
-      {/* NotionRenderer will render the first block as usual, but now it's animated */}
-    </motion.div>
-  )
-
   // Custom NotionRenderer components for animated collections
   const components = React.useMemo<Partial<NotionComponents>>(
     () => ({
