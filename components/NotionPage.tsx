@@ -1,19 +1,22 @@
-import * as React from 'react'
+import cs from 'classnames'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-import cs from 'classnames'
-import { PageBlock } from 'notion-types'
+import { type PageBlock } from 'notion-types'
 import { formatDate, getBlockTitle, getPageProperty } from 'notion-utils'
+import * as React from 'react'
 import BodyClassName from 'react-body-classname'
-import { NotionRenderer } from 'react-notion-x'
-import TweetEmbed from 'react-tweet-embed'
+import {
+  type NotionComponents,
+  NotionRenderer,
+  useNotionContext
+} from 'react-notion-x'
+import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 import { useSearchParam } from 'react-use'
 
+import type * as types from '@/lib/types'
 import * as config from '@/lib/config'
-import * as types from '@/lib/types'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
 import { searchNotion } from '@/lib/search-notion'
@@ -26,7 +29,6 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
-import { Analytics } from '@vercel/analytics/react'
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -98,8 +100,15 @@ const Modal = dynamic(
   }
 )
 
-const Tweet = ({ id }: { id: string }) => {
-  return <TweetEmbed tweetId={id} />
+function Tweet({ id }: { id: string }) {
+  const { recordMap } = useNotionContext()
+  const tweet = (recordMap as types.ExtendedTweetRecordMap)?.tweets?.[id]
+
+  return (
+    <React.Suspense fallback={<TweetSkeleton />}>
+      {tweet ? <EmbeddedTweet tweet={tweet} /> : <TweetNotFound />}
+    </React.Suspense>
+  )
 }
 
 const propertyLastEditedTimeValue = (
@@ -143,36 +152,18 @@ const propertyTextValue = (
   return defaultFn()
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <head>
-        <title>Next.js</title>
-      </head>
-      <body>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
-}
-
-export const NotionPage: React.FC<types.PageProps> = ({
+export function NotionPage({
   site,
   recordMap,
   error,
   pageId
-}) => {
+}: types.PageProps) {
   const router = useRouter()
   const lite = useSearchParam('lite')
 
-  const components = React.useMemo(
+  const components = React.useMemo<Partial<NotionComponents>>(
     () => ({
-      nextImage: Image,
+      nextLegacyImage: Image,
       nextLink: Link,
       Code,
       Collection,
@@ -204,8 +195,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const keys = Object.keys(recordMap?.block || {})
   const block = recordMap?.block?.[keys[0]]?.value
 
-  // const isRootPage =
-  //   parsePageId(block?.id) === parsePageId(site?.rootNotionPageId)
   const isBlogPost =
     block?.type === 'page' && block?.parent_table === 'collection'
 
