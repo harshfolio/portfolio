@@ -14,7 +14,6 @@ import 'styles/notion.css'
 import 'styles/prism-theme.css'
 
 import type { AppProps } from 'next/app'
-import { Analytics } from '@vercel/analytics/react'
 import * as Fathom from 'fathom-client'
 import { useRouter } from 'next/router'
 import posthog from 'posthog-js'
@@ -69,7 +68,6 @@ export default function AppRootLayout({ Component, pageProps }: AppProps) {
       </head>
       <body>
         <Component {...pageProps} />
-        <Analytics />
       </body>
     </html>
   )
