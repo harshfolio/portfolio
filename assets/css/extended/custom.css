@@ -119,8 +119,9 @@ h1, h2, h3, h4, h5, h6,
 
 .logo {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 100;
   font-size: var(--text-2xl);
+  font-style: italic;
   letter-spacing: 0.5px;
 }
 
