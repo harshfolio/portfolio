@@ -30,6 +30,10 @@ theme = 'PaperMod'
   name = "linkedin"
   url = "https://www.linkedin.com/in/harshxharsh"
 
+[[params.socialIcons]]
+  name = "x"
+  url = "https://x.com/Harshxharsh"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

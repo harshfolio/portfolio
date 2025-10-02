@@ -31,7 +31,7 @@
 .post-content {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -45,16 +45,17 @@ h1, h2, h3, h4, h5, h6,
 /* Clean header - eugeneyan style */
 .header {
   border-bottom: 1px solid var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .nav {
   font-size: 16px;
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .logo {
@@ -155,7 +156,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .home-content {
-  padding: 40px 0 50px;
+  padding: 40px 0 20px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -169,22 +170,22 @@ h1, h2, h3, h4, h5, h6,
 
 .home-content p {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: var(--content);
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .home-content ul {
-  margin: 24px 0;
+  margin: 16px 0;
   padding-left: 0;
   list-style: none;
 }
 
 .home-content ul li {
-  margin: 10px 0;
+  margin: 8px 0;
   padding-left: 20px;
   position: relative;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--content);
   font-size: 16px;
 }
@@ -213,21 +214,21 @@ h1, h2, h3, h4, h5, h6,
 
 /* Published posts section */
 .published-posts {
-  padding: 60px 0;
+  padding: 40px 0 60px;
 }
 
 .published-posts > h2 {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-weight: 600;
   font-style: italic;
 }
 
 /* Post list - eugeneyan style */
 .post-entry {
-  padding: 15px 0;
-  margin: 0 0 10px 0 !important;
-  border-bottom: none;
+  padding: 20px 24px;
+  margin: 0 0 16px 0 !important;
+  border-bottom: 1px solid var(--border);
   background: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -375,9 +376,11 @@ h1, h2, h3, h4, h5, h6,
 .footer {
   font-size: 14px;
   color: var(--tertiary);
-  padding: 60px 0 40px;
+  padding: 60px 20px 40px;
   border-top: 1px solid var(--border);
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .footer .social-icons {
