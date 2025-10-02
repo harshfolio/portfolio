@@ -33,27 +33,37 @@
             });
         }
 
-        // Find the guitar learning link and add click handler
+        // Find the guitar text and make it clickable
         document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('.home-content a');
-            links.forEach(link => {
-                const text = link.textContent.toLowerCase();
-                if (text.includes('guitar') || link.href.includes('#')) {
-                    link.addEventListener('click', function(e) {
-                        if (link.href.endsWith('#') || text.includes('guitar')) {
-                            e.preventDefault();
-                            playGuitarChord();
+            // Look for the specific guitar mention in the text
+            const paragraphs = document.querySelectorAll('.home-content p');
+            paragraphs.forEach(p => {
+                if (p.textContent.toLowerCase().includes('guitar')) {
+                    const text = p.innerHTML;
+                    const guitarMatch = text.match(/(currently learning to play the guitar)/i);
 
-                            // Visual feedback
-                            link.style.transform = 'scale(1.05)';
-                            setTimeout(() => {
-                                link.style.transform = 'scale(1)';
-                            }, 200);
+                    if (guitarMatch) {
+                        const newHTML = text.replace(
+                            guitarMatch[0],
+                            `<span class="easter-egg-guitar" style="cursor: pointer; text-decoration: underline dotted; transition: all 0.2s ease;">${guitarMatch[0]}</span>`
+                        );
+                        p.innerHTML = newHTML;
+
+                        const guitarSpan = p.querySelector('.easter-egg-guitar');
+                        if (guitarSpan) {
+                            guitarSpan.addEventListener('click', function() {
+                                playGuitarChord();
+
+                                // Visual feedback
+                                guitarSpan.style.transform = 'scale(1.05)';
+                                guitarSpan.style.opacity = '0.7';
+                                setTimeout(() => {
+                                    guitarSpan.style.transform = 'scale(1)';
+                                    guitarSpan.style.opacity = '1';
+                                }, 300);
+                            });
                         }
-                    });
-
-                    // Add subtle hint on hover
-                    link.style.transition = 'transform 0.2s ease';
+                    }
                 }
             });
         });
