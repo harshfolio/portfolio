@@ -24,17 +24,11 @@ theme = 'PaperMod'
 
 [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/harshfolio"
+  url = "https://github.com/harshfolio/"
 
-[menu]
-  [[menu.main]]
-    name = "Writing"
-    url = "/posts/"
-    weight = 1
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/harshxharsh"
 
 [markup]
   [markup.goldmark]
