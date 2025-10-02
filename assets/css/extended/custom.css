@@ -486,31 +486,51 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .post-single .post-title {
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   margin-bottom: var(--spacing-md);
+  font-weight: 700;
 }
 
 .post-description {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--secondary);
   margin: var(--spacing-md) 0;
   line-height: var(--leading-normal);
 }
 
 .post-content h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-md);
+  font-weight: 700;
 }
 
 .post-content h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-sm);
+  font-weight: 600;
 }
 
 .post-content p {
   margin: var(--spacing-md) 0;
+  line-height: var(--leading-normal);
+}
+
+.post-content ul,
+.post-content ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+  line-height: var(--leading-normal);
+}
+
+.post-content li {
+  margin: var(--spacing-sm) 0;
+}
+
+.post-content strong {
+  font-weight: 600;
+  color: var(--content);
 }
 
 .post-content code {
@@ -742,11 +762,15 @@ a.footnote-backref {
 
 @media (max-width: 768px) {
   .post-single .post-title {
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
   }
 
   .post-content h2 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
+  }
+
+  .post-content h3 {
+    font-size: var(--text-base);
   }
 
   .related-posts-grid {
