@@ -1,0 +1,19 @@
+{{- if (not site.Params.disableThemeToggle) }}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleButton = document.getElementById("theme-toggle");
+
+        if (toggleButton) {
+            toggleButton.addEventListener("click", function() {
+                if (document.body.classList.contains("dark")) {
+                    document.body.classList.remove("dark");
+                    localStorage.setItem("pref-theme", "light");
+                } else {
+                    document.body.classList.add("dark");
+                    localStorage.setItem("pref-theme", "dark");
+                }
+            });
+        }
+    });
+</script>
+{{- end }}
