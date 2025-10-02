@@ -40,7 +40,7 @@
             paragraphs.forEach(p => {
                 if (p.textContent.toLowerCase().includes('guitar')) {
                     const text = p.innerHTML;
-                    const guitarMatch = text.match(/(currently learning to play the guitar)/i);
+                    const guitarMatch = text.match(/(the guitar)/i);
 
                     if (guitarMatch) {
                         const newHTML = text.replace(
