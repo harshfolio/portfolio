@@ -12,4 +12,4 @@ Outside of core product work, I also:
 * Shipped [Clara, India's first clinical-grade AI skin analysis](https://clara.clinikally.com/) that processes 14 paramnoteters in <5 seconds
 * Featured by perplexity for creating an [AI catalog auditing system](https://www.perplexity.ai/api-platform/case-studies/clinikally) that flags compliance issues across 10K+ SKUs (featured by Perplexity)
 
-I bring a researcher's rigor to product decisions. Perpetual noob that's currently learning to play the guitar.
+I bring a researcher's rigor to product decisions. Perpetual noob that's currently learning to play the guitar. You can also send me an email [here](mailto:harshsharma12021@gmail.com)

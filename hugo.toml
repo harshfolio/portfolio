@@ -18,10 +18,6 @@ theme = 'PaperMod'
   # Math/LaTeX support
   math = true
 
-[params.homeInfoParams]
-  Title = "Hi, I'm Harsh Sharma"
-  Content = "Welcome to my personal blog where I write about analytics, data, and technology."
-
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/harshfolio/"
