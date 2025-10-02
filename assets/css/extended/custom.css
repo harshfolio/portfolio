@@ -356,13 +356,9 @@ h1, h2, h3, h4, h5, h6,
    ========================================================================== */
 
 .post-single {
-  max-width: 1200px;
+  max-width: 720px;
   margin: 0 auto;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: var(--spacing-xl);
-  align-items: start;
 }
 
 .post-header {
@@ -480,67 +476,6 @@ h1, h2, h3, h4, h5, h6,
   border-radius: 2px;
 }
 
-/* Component - Table of Contents
-   ========================================================================== */
-
-.toc-container {
-  position: sticky;
-  top: var(--spacing-md);
-  padding: var(--spacing-sm);
-  background: var(--theme);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-  align-self: start;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.dark .toc-container {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.toc-title {
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0 0 var(--spacing-sm) 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--content);
-}
-
-#TableOfContents {
-  line-height: 1.8;
-}
-
-#TableOfContents ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-#TableOfContents ul ul {
-  padding-left: var(--spacing-sm);
-  margin-top: var(--spacing-xs);
-}
-
-#TableOfContents li {
-  margin: var(--spacing-xs) 0;
-}
-
-#TableOfContents a {
-  color: var(--secondary);
-  text-decoration: none;
-  border-bottom: none;
-  transition: color var(--transition-fast);
-  display: block;
-}
-
-#TableOfContents a:hover,
-#TableOfContents a.active {
-  color: var(--primary);
-}
 
 /* Component - Related Posts
    ========================================================================== */
@@ -672,19 +607,6 @@ a.footnote-backref {
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .post-single {
-    grid-template-columns: 1fr;
-    max-width: 720px;
-  }
-
-  .toc-container {
-    position: static;
-    width: 100%;
-    margin: 0 0 var(--spacing-lg) 0;
-    max-height: none;
-    order: -1;
-  }
-
   .sidenote {
     float: none;
     margin-right: 0;
