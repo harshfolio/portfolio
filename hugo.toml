@@ -1,4 +1,4 @@
-baseURL = 'https://harshfolio.github.io/portfolio/'
+baseURL = 'https://harshfolio.github.io/'
 languageCode = 'en-us'
 title = 'Harsh Sharma'
 theme = 'PaperMod'
@@ -6,6 +6,12 @@ theme = 'PaperMod'
 [params]
   description = "Personal blog and portfolio"
   author = "Harsh Sharma"
+
+  # Site icon/favicon
+  assets.favicon = "/images/harsh-sharma.jpeg"
+  assets.favicon16x16 = "/images/harsh-sharma.jpeg"
+  assets.favicon32x32 = "/images/harsh-sharma.jpeg"
+  assets.apple_touch_icon = "/images/harsh-sharma.jpeg"
 
   # eugeneyan.com inspired settings
   ShowReadingTime = true
