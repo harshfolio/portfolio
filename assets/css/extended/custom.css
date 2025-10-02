@@ -488,7 +488,7 @@ h1, h2, h3, h4, h5, h6,
 .post-single .post-title {
   font-size: var(--text-3xl);
   margin-bottom: var(--spacing-md);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .post-description {
