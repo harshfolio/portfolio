@@ -487,10 +487,16 @@ h1, h2, h3, h4, h5, h6,
   margin-left: var(--spacing-md);
   margin-bottom: var(--spacing-md);
   padding: var(--spacing-sm);
-  background: var(--code-bg);
+  background: var(--theme);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   font-size: 14px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark .toc-container {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .toc-title {
