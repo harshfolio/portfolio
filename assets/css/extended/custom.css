@@ -237,12 +237,12 @@ h1, h2, h3, h4, h5, h6,
 .home-cta-section {
   text-align: center;
   margin-top: var(--spacing-xl);
+}
+
+.cta-link {
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--text-lg);
-}
-
-.home-cta-section a {
   color: var(--primary);
   text-decoration: none;
   border-bottom: 1px solid var(--primary);
@@ -250,7 +250,7 @@ h1, h2, h3, h4, h5, h6,
   transition: opacity var(--transition-fast);
 }
 
-.home-cta-section a:hover {
+.cta-link:hover {
   opacity: 0.7;
 }
 
