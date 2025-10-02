@@ -31,6 +31,10 @@ theme = 'PaperMod'
   url = "https://x.com/Harshxharsh"
 
 [markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -38,4 +42,5 @@ theme = 'PaperMod'
     codeFences = true
     guessSyntax = true
     lineNos = false
+    noClasses = false
     style = "monokai"

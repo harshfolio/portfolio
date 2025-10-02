@@ -1,0 +1,61 @@
+<script>
+    // Guitar chord easter egg
+    (function() {
+        // Create AudioContext for generating guitar chord sound
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+
+        function playGuitarChord() {
+            const audioContext = new AudioContext();
+            const now = audioContext.currentTime;
+
+            // C Major chord frequencies (C, E, G)
+            const frequencies = [261.63, 329.63, 392.00];
+
+            frequencies.forEach((freq, index) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = freq;
+                oscillator.type = 'triangle'; // Softer sound like a guitar
+
+                // ADSR envelope for guitar-like sound
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(0.3, now + 0.01); // Attack
+                gainNode.gain.exponentialRampToValueAtTime(0.1, now + 0.1); // Decay
+                gainNode.gain.exponentialRampToValueAtTime(0.05, now + 0.5); // Sustain
+                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1.5); // Release
+
+                oscillator.start(now + index * 0.02); // Slight strum delay
+                oscillator.stop(now + 1.5);
+            });
+        }
+
+        // Find the guitar learning link and add click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.home-content a');
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                if (text.includes('guitar') || link.href.includes('#')) {
+                    link.addEventListener('click', function(e) {
+                        if (link.href.endsWith('#') || text.includes('guitar')) {
+                            e.preventDefault();
+                            playGuitarChord();
+
+                            // Visual feedback
+                            link.style.transform = 'scale(1.05)';
+                            setTimeout(() => {
+                                link.style.transform = 'scale(1)';
+                            }, 200);
+                        }
+                    });
+
+                    // Add subtle hint on hover
+                    link.style.transition = 'transform 0.2s ease';
+                }
+            });
+        });
+    })();
+</script>

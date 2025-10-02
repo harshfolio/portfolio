@@ -1,0 +1,41 @@
+{{- if .TableOfContents }}
+<script>
+    // TOC active section highlighting
+    (function() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const tocLink = document.querySelector(`#TableOfContents a[href="#${id}"]`);
+
+                if (tocLink) {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('#TableOfContents a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        tocLink.classList.add('active');
+                    }
+                }
+            });
+        }, { rootMargin: '-100px 0px -66%' });
+
+        document.querySelectorAll('.post-content h2[id], .post-content h3[id]').forEach(heading => {
+            observer.observe(heading);
+        });
+    })();
+</script>
+{{- end }}
+
+<script>
+    // Add language labels to code blocks
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.highlight').forEach(block => {
+            const code = block.querySelector('code[data-lang]');
+            if (code) {
+                const lang = code.getAttribute('data-lang');
+                if (lang) {
+                    block.setAttribute('data-lang', lang);
+                }
+            }
+        });
+    });
+</script>
