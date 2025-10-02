@@ -154,7 +154,6 @@ h1, h2, h3, h4, h5, h6,
 .home-content {
   padding: var(--spacing-2xl) 0 var(--spacing-lg);
   border-bottom: 1px solid var(--border);
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .home-content h2 {
@@ -231,7 +230,6 @@ h1, h2, h3, h4, h5, h6,
 .home-avatar {
   text-align: center;
   margin-bottom: var(--spacing-md);
-  animation: fadeInUp 0.6s ease-out 0.1s backwards;
 }
 
 .home-avatar img {
@@ -249,7 +247,6 @@ h1, h2, h3, h4, h5, h6,
   margin-top: 0;
   font-weight: 400;
   line-height: var(--leading-tight);
-  animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
 .home-cta-section {
@@ -258,47 +255,41 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .cta-link {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-lg);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
   color: var(--primary);
   text-decoration: none;
-  border-bottom: 1px solid var(--primary);
-  margin: 0 var(--spacing-md);
+  border: 1.5px solid var(--primary);
+  border-radius: 6px;
+  background: var(--theme);
+  padding: 6px 10px;
+  margin: 0 var(--spacing-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  display: inline-block;
-  overflow: hidden;
-  padding: var(--spacing-xs) 0;
-  transition: opacity var(--transition-fast);
-}
-
-.cta-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 300%;
-  height: 100%;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    transparent 30%,
-    rgba(26, 115, 232, 0.06) 40%,
-    rgba(26, 115, 232, 0.1) 48%,
-    rgba(26, 115, 232, 0.12) 50%,
-    rgba(26, 115, 232, 0.1) 52%,
-    rgba(26, 115, 232, 0.06) 60%,
-    transparent 70%,
-    transparent 100%);
-  transition: left 1s cubic-bezier(0.25, 0.1, 0.25, 1);
-  pointer-events: none;
-}
-
-.cta-link:hover::before {
-  left: 100%;
+  transform: translateY(0);
+  transition: all 0.1s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 0 0 var(--primary);
 }
 
 .cta-link:hover {
-  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 0 var(--primary);
+}
+
+.cta-link:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 var(--primary);
+  transition: all 0.05s ease;
+}
+
+.dark .cta-link {
+  background: var(--theme);
+  color: #66b0ff;
+  border-color: #66b0ff;
 }
 
 /* Layout - Footer
