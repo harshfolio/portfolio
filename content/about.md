@@ -4,8 +4,20 @@ date: 2025-10-02
 draft: false
 ---
 
-## About Me
+## Hi, I'm Harsh Sharma
 
-This is your about page. Edit `content/about.md` to customize it.
+I'm passionate about analytics, data science, and technology.
 
-Add information about yourself, your interests, and what you write about.
+This blog is where I share my thoughts, learnings, and explorations in the world of data and beyond.
+
+### What I Write About
+
+- Data analytics and visualization
+- Machine learning and AI
+- Healthcare analytics
+- Technical tutorials and guides
+- Personal reflections on tech and career
+
+### Get in Touch
+
+Feel free to connect with me on [GitHub](https://github.com/harshfolio) or reach out via email.

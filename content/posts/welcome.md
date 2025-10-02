@@ -1,9 +1,10 @@
 ---
 title: "Welcome to My Blog"
+description: "A sample blog post demonstrating the features of this Hugo-powered blog with math, code highlighting, and more."
 date: 2025-10-02
 draft: false
 math: true
-tags: ["intro", "math", "sample"]
+tags: ["intro", "tutorial"]
 ---
 
 ## Hello World
